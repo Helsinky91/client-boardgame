@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Shadows+Into+Light&family=VT323&family=Viga&display=swap');
+
+body {
+  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 255, 191, 0.129);
+}
+
+/* button{
+  font-family: 'VT323', monospace
+} */
+

@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <ul class="nav-component">
+    <div class="navbar-list">
+      <li class="navbar-link">
+        <button class="navbar-btn"><a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      ></button>
+    </li>
+    <li class="navbar-link">
+      <button class="navbar-btn"><a routerLink="/games" routerLinkActive="active">List of Games</a></button>
+    </li>
+  </div>
+  <div class="navbar-list">
+    <li class="navbar-link">
+      <button class="navbar-btn"><a routerLink="/profile" routerLinkActive="active">My Profile</a></button>
+    </li>
+
+    <li class="navbar-link">
+      <button class="navbar-btn"><a routerLink="/singup" routerLinkActive="active">Sing up</a></button>
+    </li>
+    <li class="navbar-link">
+    <button class="navbar-btn"><a routerLink="/login" routerLinkActive="active">Log in</a></button>
+    </li>
+  </div>
+  </ul>
+</nav>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./error-page.component.css']
 })
 export class ErrorPageComponent {
-
+  photoUrl: string = '../../../assets/img/error.jpg'
 }

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: "**",
     component: ErrorPageComponent
   }
+
+  //! insertar log in, signup pages
+  //! edit game, update game
+  //! edit profile, delete profile
 ];
 
 @NgModule({

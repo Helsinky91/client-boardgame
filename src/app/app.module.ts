@@ -10,6 +10,7 @@ import { GameItemComponent } from './component/game-item/game-item.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorPageComponent } from './component/error-page/error-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,12 @@ import { ErrorPageComponent } from './component/error-page/error-page.component'
     GameItemComponent,
     ProfileComponent,
     ErrorPageComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
