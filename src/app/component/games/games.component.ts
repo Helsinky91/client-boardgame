@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/sevices/games.service';
 
 @Component({
@@ -22,5 +22,9 @@ export class GamesComponent {
           }
         }
       )
+    }
+
+    ngOnInit() : void {
+      this.getGames();
     }
 }

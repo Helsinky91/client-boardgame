@@ -1,12 +1,14 @@
 <p>games works!</p>
 <p> Here it goes the list of the games</p>
 
-<button (click)="getGames()">Get Courses</button>
+<!-- <button (click)="getGames()">Get Courses</button> -->
 
 <section *ngIf="games">
   <ul>
     <li *ngFor="let game of games">
-        {{ game.name }}
+
+        <h1> {{ game.name }} </h1>
+        <img class="game-pic" src="{{game.picture}}"/>
     </li>
   </ul>
 </section>
