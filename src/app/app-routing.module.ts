@@ -5,6 +5,7 @@ import { HomeComponent } from './component/home/home.component';
 import { GamesComponent } from './component/games/games.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ErrorPageComponent } from './component/error-page/error-page.component';
+import { LoginComponent } from './component/login/login.component';
 
 const routes: Routes = [
   {
@@ -22,9 +23,13 @@ const routes: Routes = [
   {
     path: "**",
     component: ErrorPageComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
   }
 
-  //! insertar log in, signup pages
+  //! insertar signup pages
   //! edit game, update game
   //! edit profile, delete profile
 ];

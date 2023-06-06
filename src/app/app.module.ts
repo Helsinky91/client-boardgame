@@ -11,6 +11,8 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorPageComponent } from './component/error-page/error-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './component/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { HttpClientModule } from '@angular/common/http';
     GameItemComponent,
     ProfileComponent,
     ErrorPageComponent,
+    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

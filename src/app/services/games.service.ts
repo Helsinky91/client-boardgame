@@ -11,6 +11,6 @@ export class GamesService {
   constructor(private http: HttpClient) { }
 
   getGames(): Observable<any> {
-    return this.http.get<any>(this.API_URL);
+    return this.http.get<any>(this.API_URL)
   }
 }

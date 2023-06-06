@@ -1,0 +1,6 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
+  <input type="text" formControlName="username" placeholder="Username">
+  <button type="submit">Login</button>
+  <p *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].dirty">Username is required and must be at least 5 characters long</p>
+  <p *ngIf="usernameExists">User with this username already exists</p>
+</form>
