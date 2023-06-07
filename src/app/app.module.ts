@@ -15,6 +15,7 @@ import { LoginComponent } from './component/user/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewGameComponent } from './component/games/new-game/new-game.component';
 import { SingupComponent } from './component/user/singup/singup.component';
+import { EditGameComponent } from './component/games/edit-game/edit-game.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SingupComponent } from './component/user/singup/singup.component';
     LoginComponent,
     NewGameComponent,
     SingupComponent,
+    EditGameComponent,
 
   ],
   imports: [

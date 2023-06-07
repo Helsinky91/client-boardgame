@@ -1,0 +1,32 @@
+<p>edit-game works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <label>
+    Brand:
+    <input type="text" formControlName="brand">
+  </label>
+  <label>
+    Picture:
+    <input type="text" formControlName="picture">
+  </label>
+  <label>
+    Minimum Age:
+    <input type="number" formControlName="minAge">
+  </label>
+  <label>
+    Minimum Players:
+    <input type="number" formControlName="minPlayers">
+  </label>
+  <label>
+    Maximum Players:
+    <input type="number" formControlName="maxPlayers">
+  </label>
+  <label>
+    Description:
+    <textarea formControlName="description"></textarea>
+  </label>
+  <button type="submit">Save changes</button>
+</form>

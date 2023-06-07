@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/services/games.service';
 import { GamesInterface } from 'src/app/interfaces/games-interface';
-import { FormControl, FormBuilder, Validators } from '@angular/forms';
+// import { FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-games',
@@ -14,9 +15,7 @@ export class GamesComponent implements OnInit {
   selectedGame: any;
   showForm = false;
 
-    constructor(private gamesService: GamesService){
-
-    }
+    constructor(private gamesService: GamesService, private router: Router){}
 
     getGames() : void {
       this.gamesService.getGames().subscribe(
@@ -33,11 +32,15 @@ export class GamesComponent implements OnInit {
       this.getGames();
     }
 
-    getGameId(id: number){
-      this.selectedGame = this.gamesList.find((game: GamesInterface) => game.id === id);
+    getGameId(id: number) {
+      if (this.gamesList) {
+        this.selectedGame = this.gamesList.find((game: GamesInterface) => game.id === id);
+        if (this.selectedGame) {
+          this.router.navigate(['/games', this.selectedGame.id]);
+        }
+      }
     }
 
-    //add new game: linkear el form
     addGame(newGame: GamesInterface) {
       this.gamesService.postGame(newGame).subscribe(
         {
@@ -49,11 +52,6 @@ export class GamesComponent implements OnInit {
         }
       )
     }
-
-
-
-
-
 
 
 }

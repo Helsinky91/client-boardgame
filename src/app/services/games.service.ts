@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { GamesInterface } from '../interfaces/games-interface';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +17,8 @@ export class GamesService {
     return this.http.get<GamesInterface>(this.API_URL)
   }
 
-  getGameId(id: number) : Observable<GamesInterface> {
-    return this.http.get<GamesInterface>(`${this.API_URL}/${id}`)
+  getGameId(id: number) : Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/${id}`)
   }
 
   getRandomGame() : Observable<GamesInterface> {
@@ -34,5 +36,7 @@ export class GamesService {
   deleteGame(id: number): Observable<GamesInterface> {
     return this.http.delete<GamesInterface>(`${this.API_URL}/${id}/delete`)
   }
+
+
 
 }

@@ -6,6 +6,8 @@ import { GamesComponent } from './component/games/games-list/games.component';
 import { ProfileComponent } from './component/user/profile/profile.component';
 import { ErrorPageComponent } from './component/error-page/error-page.component';
 import { LoginComponent } from './component/user/login/login.component';
+import { GameItemComponent } from './component/games/game-item/game-item.component';
+import { EditGameComponent } from './component/games/edit-game/edit-game.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,13 @@ const routes: Routes = [
     path: "login",
     component: LoginComponent
   },
+  {
+    path: "games/:id",
+    component: GameItemComponent
+  },
+  {
+    path: 'games/:id/edit',
+    component: EditGameComponent },
   {
     path: "**",
     component: ErrorPageComponent

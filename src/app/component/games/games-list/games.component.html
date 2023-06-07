@@ -1,5 +1,7 @@
 <p>games works!</p>
 <p> Here it goes the list of the games</p>
+<div class="padding-left">
+
 <div *ngIf="showForm">
   <app-new-game (gameCreated)="addGame($event)"></app-new-game>
 </div>
@@ -8,11 +10,11 @@
 <section *ngIf="gamesList">
   <ul>
     <li *ngFor="let game of gamesList">
-      <!-- <a (click)="getCharacterId(character.id)">{{ character.name }}</a> -->
-        <h1> {{ game.name }} </h1>
-        <img class="game-pic" src="{{game.picture}}"/>
+      <a [routerLink]="['/games', game.id]"><div><h1>{{ game.name }}</h1>
+      <img class="game-pic" src="{{game.picture}}"/> </div> </a>
     </li>
   </ul>
 </section>
+</div>
 
 

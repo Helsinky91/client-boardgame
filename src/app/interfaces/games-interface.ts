@@ -1,5 +1,5 @@
 export interface GamesInterface {
-  "id"?: number,  //optional id.
+  "id": number, 
   "name": string,
   "brand": string,
   "picture": string,

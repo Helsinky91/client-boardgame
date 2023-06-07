@@ -6,8 +6,13 @@ body {
   padding: 0;
   margin: 0;
   background-color: rgba(0, 255, 191, 0.129);
+  padding-bottom: 7%;
+
 }
 
+.padding-left{
+  padding-left: 5%
+}
 
 .footer {
   position: fixed;
@@ -21,7 +26,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   font-family: 'VT323', monospace;
-  
+
 }
 
 .footer div > a {
