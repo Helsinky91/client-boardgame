@@ -21,12 +21,12 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path: "**",
-    component: ErrorPageComponent
-  },
-  {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "**",
+    component: ErrorPageComponent
   }
 
   //! insertar signup pages

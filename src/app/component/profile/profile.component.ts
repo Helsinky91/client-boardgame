@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
+  //chequar que lo que llegue del url y el user que buscas sea el mismo
+
 }

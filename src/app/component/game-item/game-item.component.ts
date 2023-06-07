@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class GameItemComponent {
 
+
+
+
+    //edit game
+    
+
+    //delete game
+    //redirecciono a game page inicial
+
+
 }

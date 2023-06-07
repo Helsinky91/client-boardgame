@@ -13,4 +13,25 @@ export class GamesService {
   getGames(): Observable<any> {
     return this.http.get<any>(this.API_URL)
   }
+
+  getGameId(id: number) : Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/${id}`)
+  }
+
+  getRandomGame() : Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/random-game`)
+  }
+
+  postGame(body: any): Observable<any> {
+    return this.http.post<any>(`${this.API_URL}/add-game`, body)
+  }
+
+  putGame(id: number, body: any): Observable<any> {
+    return this.http.put<any>(`${this.API_URL}/${id}/edit`, body)
+  }
+
+  deleteGame(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API_URL}/${id}/delete`)
+  }
+
 }

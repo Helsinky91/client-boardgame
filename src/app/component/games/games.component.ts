@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/services/games.service';
+import { GamesInterface } from 'src/app/interfaces/games-interface';
+import { FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-games',
@@ -7,7 +9,9 @@ import { GamesService } from 'src/app/services/games.service';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  games: any;
+
+  gamesList: any;
+  selectedGame: any;
 
     constructor(private gamesService: GamesService){
 
@@ -18,7 +22,7 @@ export class GamesComponent implements OnInit {
         {
           next: (data) => {
             console.log(data);
-            this.games = data;
+            this.gamesList = data;
           }
         }
       )
@@ -27,4 +31,18 @@ export class GamesComponent implements OnInit {
     ngOnInit() : void {
       this.getGames();
     }
+
+    getGameId(id: number){
+      this.selectedGame = this.gamesList.find((game: GamesInterface) => game.id === id);
+    }
+
+    //add new game: linkear el form
+
+
+
+
+
+
+
+
 }

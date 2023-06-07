@@ -21,14 +21,21 @@ export class LoginComponent implements OnInit {
 
   onLoginFormSubmit(): void {
     const username = this.loginForm.controls['username'].value;
-    this.userService.checkIfUserExists(username).subscribe(
-      userExists => {
-        if (userExists) {
-          this.usernameExists = true;
-        } else {
-          // User does not exist, proceed with login
-        }
+    const password = this.loginForm.controls['password'].value;
+    this.userService.login(username, password).subscribe({
+      next: (data) => {
+        this.usernameExists = true;
+
+        localStorage.setItem("loggedUserId", data.id);
+
+        // Redirection to other page
+
+      },
+      error: (error) => {
+        alert("User not exists");
       }
+    }
+
     );
   }
 }

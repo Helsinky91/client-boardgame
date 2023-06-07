@@ -11,8 +11,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  checkIfUserExists(username: string): Observable<boolean> {
-    return this.http.get<boolean>(this.API_URL + username + '/exists');
-    // return this.http.get<boolean>(`${this.API_URL}${username}/exists`);
+  login(username: string, password: string): Observable<any> {
+    let body:any = {
+      username: username,
+      password: password
+    };
+    return this.http.patch<any>(`${this.API_URL}/login`, body)
   }
+
+  
 }

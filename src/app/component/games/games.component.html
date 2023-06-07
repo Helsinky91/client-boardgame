@@ -3,15 +3,16 @@
 
 <!-- <button (click)="getGames()">Get Courses</button> -->
 
-<section *ngIf="games">
+<section *ngIf="gamesList">
   <ul>
-    <li *ngFor="let game of games">
-
+    <li *ngFor="let game of gamesList">
+      <!-- <a (click)="getCharacterId(character.id)">{{ character.name }}</a> -->
         <h1> {{ game.name }} </h1>
         <img class="game-pic" src="{{game.picture}}"/>
     </li>
   </ul>
 </section>
 
-<p>also ADD GAME</p>
-
+<!--
+<p>also boton hidden ADD GAME </p>
+<app-create-game></app-create-game> -->
