@@ -9,6 +9,7 @@ import { LoginComponent } from './component/user/login/login.component';
 import { GameItemComponent } from './component/games/game-item/game-item.component';
 import { EditGameComponent } from './component/games/edit-game/edit-game.component';
 import { SignupComponent } from './component/user/signup/signup.component';
+import { EditProfileComponent } from './component/user/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {
@@ -28,8 +29,12 @@ const routes: Routes = [
     component: EditGameComponent
   },
   {
-    path: "profile",
+    path: "user/:id",
     component: ProfileComponent
+  },
+  {
+    path: "user/:id/edit",
+    component: EditProfileComponent
   },
   {
     path: "login",

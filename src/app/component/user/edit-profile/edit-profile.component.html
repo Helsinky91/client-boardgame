@@ -1,0 +1,34 @@
+<div class="padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Username:
+      <input type="text" formControlName="username">
+    </label>
+    <label>
+      Email:
+      <input type="text" formControlName="email">
+    </label>
+    <label>
+      Self Description:
+      <textarea formControlName="selfDescription"></textarea>
+    </label>
+    <label>
+      Date of Birth:
+      <input type="date" formControlName="dateOfBirth">
+    </label>
+    <label>
+      Profile Picture URL:
+      <input type="text" formControlName="profilePicUrl">
+    </label>
+    <hr />
+    <label>
+      Street:
+      <input type="text" formControlName="address.street">
+    </label>
+    <label>
+      City:
+      <input type="text" formControlName="address.city">
+    </label>
+    <button type="submit">Save changes</button>
+  </form>
+</div>

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   invalidLogin: boolean = false;
+  user: any;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
@@ -29,7 +30,9 @@ export class LoginComponent implements OnInit {
         user => {
           console.log(user);
           localStorage.setItem('currentUser', JSON.stringify(user));
-          this.router.navigate(['/home']);
+          this.user = user;
+          this.router.navigate(['/user', this.user.id])
+          
         },
         error => {
           this.invalidLogin = true;

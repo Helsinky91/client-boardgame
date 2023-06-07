@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<div class="padding">
+<h1>Profile</h1>
+<div *ngIf="currentUser">
+  <h1>HELLO {{currentUser.username}}</h1>
+  <p>Email: {{currentUser.email}}</p>
+  <p>Date of Birth: {{currentUser.dateOfBirth}}</p>
+  <p>Address: {{currentUser.address.city}}, {{currentUser.address.street}}</p>
+  <p>Role: {{currentUser.role}}</p>
+  <!-- <p>Age: {{currentUser.getAge() }}</p> -->
+</div>
+<div>
+  <button (click)="goToEditProfile()">Edit Profile</button>
+</div>
+<div>
+  <h3>WishList</h3>
+  <!-- <p>{{currentUser.WishList}}</p> -->
+</div>
+</div>

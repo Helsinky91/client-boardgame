@@ -28,12 +28,10 @@ export class GameItemComponent implements OnInit{
     });
   }
 
-
-    //edit game
-    goToEditGame() {
-      const id = +this.route.snapshot.paramMap.get('id')!;
-        this.router.navigate(['/games', id, 'edit']);
-    }
+  goToEditGame() {
+    const id = +this.route.snapshot.paramMap.get('id')!;
+      this.router.navigate(['/games', id, 'edit']);
+  }
 
     //delete game
     //redirecciono a game page inicial
