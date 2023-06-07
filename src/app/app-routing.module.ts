@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from '@angular/router'
 import { HomeComponent } from './component/home/home.component';
-import { GamesComponent } from './component/games/games.component';
-import { ProfileComponent } from './component/profile/profile.component';
+import { GamesComponent } from './component/games/games-list/games.component';
+import { ProfileComponent } from './component/user/profile/profile.component';
 import { ErrorPageComponent } from './component/error-page/error-page.component';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './component/user/login/login.component';
 
 const routes: Routes = [
   {

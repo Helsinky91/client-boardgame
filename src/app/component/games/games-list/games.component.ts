@@ -12,6 +12,7 @@ export class GamesComponent implements OnInit {
 
   gamesList: any;
   selectedGame: any;
+  showForm = false;
 
     constructor(private gamesService: GamesService){
 
@@ -37,7 +38,17 @@ export class GamesComponent implements OnInit {
     }
 
     //add new game: linkear el form
-
+    addGame(newGame: GamesInterface) {
+      this.gamesService.postGame(newGame).subscribe(
+        {
+          next: (data) => {
+            console.log(data);
+            this.gamesList.push(data);
+            this.showForm = false;
+          }
+        }
+      )
+    }
 
 
 

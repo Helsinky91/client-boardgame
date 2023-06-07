@@ -6,4 +6,5 @@ export interface GamesInterface {
   "minAge": number,
   "minPlayers": number,
   "maxPlayers": number,
+  "description": string
 }

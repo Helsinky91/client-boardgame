@@ -1,7 +1,9 @@
 <p>games works!</p>
 <p> Here it goes the list of the games</p>
-
-<!-- <button (click)="getGames()">Get Courses</button> -->
+<div *ngIf="showForm">
+  <app-new-game (gameCreated)="addGame($event)"></app-new-game>
+</div>
+<button (click)="showForm = !showForm">{{ showForm ? 'Hide Section' : 'Add New Game' }}</button>
 
 <section *ngIf="gamesList">
   <ul>
@@ -13,6 +15,4 @@
   </ul>
 </section>
 
-<!--
-<p>also boton hidden ADD GAME </p>
-<app-create-game></app-create-game> -->
+
