@@ -39,8 +39,19 @@ export class ProfileComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')!;
       this.router.navigate(['/user', id, 'edit']);
   }
+
+
+  deleteUser(id: number): void {
+    this.userService.deleteUser(id).subscribe(
+      {
+        next: (data) => {
+          console.log(data);
+          this.router.navigate(['/home'])
+        },
+        error: (err) => {
+          console.log('Error deleting user:', err);
+        }
+      }
+    )
+  }
 }
-
-
-
-

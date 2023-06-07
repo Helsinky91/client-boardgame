@@ -1,1 +1,14 @@
-<p>signup works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+  <label>Username: </label>
+  <input type="text" formControlName="username">
+
+  <label>Email: </label>
+  <input type="email" formControlName="email">
+
+  <label>Password: </label>
+  <input type="password" formControlName="password">
+
+  <!-- add other fields as needed -->
+
+  <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+</form>

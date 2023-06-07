@@ -1,11 +1,11 @@
-<div class="padding">
+<div class="padding padding-left">
 
 
 
   <button (click)="getRandomGame()">Check another game</button>
 
 
-  <section *ngIf="game">
+  <section class="padding" *ngIf="game">
     <h1>The Random game of the day:</h1>
     <div class="card text-center">
       <a [routerLink]="['/games', game.id]">

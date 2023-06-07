@@ -27,5 +27,5 @@
     Description:
     <textarea formControlName="description"></textarea>
   </label>
-  <button type="submit">Save Game</button>
+  <button type="submit" [disabled]="form.invalid" >Save Game</button>
 </form>

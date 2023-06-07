@@ -1,11 +1,16 @@
-<div class="padding">
-  <button (click)="goToEditGame()">Edit Game</button>
-  <h1>{{ game.name }}</h1>
-  <p>{{ game.brand }}</p>
-  <img class="game-alone-pic" [src]="game.picture" alt="Game Image">
-  <p>{{ game.minAge }}+</p>
-  <p>{{ game.minPlayers }} - {{ game.maxPlayers }} players</p>
-  <p>{{ game.description }}</p>
-
+<div class="text-left padding">
+  <div>
+    <button class="btn" (click)="goToEditGame()">Edit Game</button>
+    <button class="red-btn" (click)="deleteGame(game.id)">Delete Game</button>
+  </div>
+  <div>
+    <h1>{{ game.name }}</h1>
+    <p>{{ game.brand }}</p>
+    <img class="game-alone-pic" [src]="game.picture" alt="Game Image">
+    <p>{{ game.minAge }}+</p>
+    <p>{{ game.minPlayers }} - {{ game.maxPlayers }} players</p>
+    <p>{{ game.description }}</p>
+  </div>
+  <!-- <button (click)="addGameToUser(game.id)">Add to My Games</button> -->
 </div>
 
