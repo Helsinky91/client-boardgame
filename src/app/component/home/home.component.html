@@ -1,6 +1,21 @@
-<div class="padding-left">
+<div class="padding">
 
-  <p>home works!</p>
+
+
+  <button (click)="getRandomGame()">Check another game</button>
+
+
+  <section *ngIf="game">
+    <h1>The Random game of the day:</h1>
+    <div class="card text-center">
+      <a [routerLink]="['/games', game.id]">
+        <img class="card-img-top game-pic" src="{{game.picture}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{game.name}}</h5>
+        </div>
+      </a>
+  </div>
+</section>
 
 
 </div>

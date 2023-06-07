@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/user/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewGameComponent } from './component/games/new-game/new-game.component';
-import { SingupComponent } from './component/user/singup/singup.component';
+import { SignupComponent } from './component/user/signup/signup.component';
 import { EditGameComponent } from './component/games/edit-game/edit-game.component';
 
 @NgModule({
@@ -29,7 +29,7 @@ import { EditGameComponent } from './component/games/edit-game/edit-game.compone
     ErrorPageComponent,
     LoginComponent,
     NewGameComponent,
-    SingupComponent,
+    SignupComponent,
     EditGameComponent,
 
   ],

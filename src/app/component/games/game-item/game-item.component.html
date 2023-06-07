@@ -1,8 +1,8 @@
-<div>
+<div class="padding">
   <button (click)="goToEditGame()">Edit Game</button>
   <h1>{{ game.name }}</h1>
   <p>{{ game.brand }}</p>
-  <img [src]="game.picture" alt="Game Image">
+  <img class="game-alone-pic" [src]="game.picture" alt="Game Image">
   <p>{{ game.minAge }}+</p>
   <p>{{ game.minPlayers }} - {{ game.maxPlayers }} players</p>
   <p>{{ game.description }}</p>

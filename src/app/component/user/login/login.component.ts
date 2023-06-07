@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,34 +9,32 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup = new FormGroup({});
-  usernameExists = false;
+  loginForm!: FormGroup;
+  invalidLogin: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(5)]]
+      username: ['', [Validators.required, Validators.minLength(5)]],
+      password: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
-  onLoginFormSubmit(): void {
+  login(): void {
     const username = this.loginForm.controls['username'].value;
     const password = this.loginForm.controls['password'].value;
-    this.userService.login(username, password).subscribe({
-      next: (data) => {
-        this.usernameExists = true;
-
-        localStorage.setItem("loggedUserId", data.id);
-
-        // Redirection to other page
-
-      },
-      error: (error) => {
-        alert("User not exists");
-      }
-    }
-
-    );
+    this.userService.login(username, password)
+      .subscribe(
+        user => {
+          console.log(user);
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.router.navigate(['/home']);
+        },
+        error => {
+          this.invalidLogin = true;
+          console.log(error);
+        }
+      );
   }
 }

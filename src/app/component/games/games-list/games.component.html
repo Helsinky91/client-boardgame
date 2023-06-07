@@ -1,6 +1,6 @@
 <p>games works!</p>
 <p> Here it goes the list of the games</p>
-<div class="padding-left">
+<div class="padding">
 
 <div *ngIf="showForm">
   <app-new-game (gameCreated)="addGame($event)"></app-new-game>
@@ -8,12 +8,18 @@
 <button (click)="showForm = !showForm">{{ showForm ? 'Hide Section' : 'Add New Game' }}</button>
 
 <section *ngIf="gamesList">
-  <ul>
-    <li *ngFor="let game of gamesList">
-      <a [routerLink]="['/games', game.id]"><div><h1>{{ game.name }}</h1>
-      <img class="game-pic" src="{{game.picture}}"/> </div> </a>
-    </li>
-  </ul>
+  <div class="row">
+    <div class="card-deck">
+      <div class="card text-center" *ngFor="let game of gamesList">
+        <a [routerLink]="['/games', game.id]">
+          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{game.name}}</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 </div>
 

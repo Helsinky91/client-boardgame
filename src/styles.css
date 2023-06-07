@@ -6,12 +6,16 @@ body {
   padding: 0;
   margin: 0;
   background-color: rgba(0, 255, 191, 0.129);
-  padding-bottom: 7%;
 
 }
 
-.padding-left{
-  padding-left: 5%
+.padding{
+  padding-left: 5%;
+  padding-bottom: 12%;
+}
+
+.nav-bar{
+  position: fixed;
 }
 
 .footer {
@@ -27,6 +31,34 @@ body {
   align-items: center;
   font-family: 'VT323', monospace;
 
+}
+
+.card-deck{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  padding-top: 50px;
+
+
+}
+
+.card{
+  background-color: rgba(135, 135, 135, 0.457);
+  padding: 10px;
+  padding-top: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  width: 200px;
+
+}
+.game-pic{
+  height: 200px;
+}
+
+.game-alone-pic{
+  height: 400px;
 }
 
 .footer div > a {
