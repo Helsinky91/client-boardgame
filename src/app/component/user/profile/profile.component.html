@@ -4,7 +4,7 @@
     <div *ngIf="currentUser">
       <img class="game-pic" [src]="currentUser.profilePicUrl" alt="Profile Image">
       <p>Email: {{currentUser.email}}</p>
-      <p>Date of Birth: {{currentUser.dateOfBirth}}</p>
+      <!-- <p>Date of Birth: {{currentUser.dateOfBirth}}</p> -->
       <p *ngIf="currentUser.address">Address: {{currentUser.address.city}}, {{currentUser.address.street}}</p>
       <p>Role: {{currentUser.role}}</p>
       <p>Description: {{currentUser.selfDescription}}</p>

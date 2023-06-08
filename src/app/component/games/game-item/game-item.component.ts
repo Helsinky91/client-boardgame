@@ -42,7 +42,6 @@ export class GameItemComponent implements OnInit{
       this.gamesService.deleteGame(id).subscribe(
         {
           next: (data) => {
-            console.log(data);
             this.router.navigate(['/games'])
           },
           error: (err) => {

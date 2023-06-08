@@ -1,14 +1,11 @@
 <div class="auth-page">
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
-    <label>Username: </label>
-  <input type="text" formControlName="username">
+  <form (ngSubmit)="onSubmit()" [formGroup]="signupForm" class="auth-form">
+  <input type="text" formControlName="username" placeholder="Username">
 <br>
-  <label>Email: </label>
-  <input type="email" formControlName="email">
+  <input type="email" formControlName="email" placeholder="Email">
 <br>
-  <label>Password: </label>
-  <input type="password" formControlName="password">
+  <input type="password" formControlName="password" placeholder="Password">
 <br>
     <p class="error-message" *ngIf="signupForm.controls['username'].invalid && signupForm.controls['username'].dirty"><b>Username</b> is required and must be bettween 5 and 12 characters long</p>
     <p class="error-message" *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].dirty"><b>Password</b> is required and must be at least 4 characters long and contain at least 1 uppercase letter</p>

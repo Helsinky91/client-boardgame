@@ -1,5 +1,5 @@
-<div class="padding" *ngIf="user">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="padding form-container" *ngIf="user" >
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="edit-form">
     <label>
       Username:
       <input type="text" formControlName="username">
@@ -12,15 +12,15 @@
       Self Description:
       <textarea formControlName="selfDescription"></textarea>
     </label>
-    <label>
+    <!-- <label>
       Date of Birth:
       <input type="date" formControlName="dateOfBirth">
-    </label>
+    </label> -->
     <label>
       Profile Picture URL:
       <input type="text" formControlName="profilePicUrl">
     </label>
-    <hr />
-    <button type="submit">Save changes</button>
+    
+    <button class="auth-btn" type="submit">Save changes</button>
   </form>
 </div>

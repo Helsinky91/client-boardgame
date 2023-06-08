@@ -28,7 +28,7 @@ export class EditProfileComponent implements OnInit{
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       selfDescription: [''],
-      dateOfBirth: ['', Validators.required],
+
       profilePicUrl: [''],
       address: this.fb.group({
         street: [''],
@@ -47,7 +47,7 @@ export class EditProfileComponent implements OnInit{
         username: user.username,
         email: user.email,
         selfDescription: user.selfDescription,
-        dateOfBirth: user.dateOfBirth,
+
         profilePicUrl: user.profilePicUrl,
         password: user.password,
         address: {
@@ -66,7 +66,7 @@ export class EditProfileComponent implements OnInit{
 
     this.userService.putUser(this.user.id, updatedUser).subscribe(updatedUserData => {
       this.user = updatedUserData;
-      console.log(updatedUserData)
+      // console.log(updatedUserData)
       this.userUpdated.emit(updatedUserData);
       this.router.navigate(['/user', this.user.id]);
     });

@@ -3,19 +3,25 @@
 
   <div class="home-section">
 
-  <section class="random-card" *ngIf="game">
-    <h3>The Random game of the day:</h3>
-    <div class="card text-center">
-      <a [routerLink]="['/games', game.id]">
-        <img class="card-img-top game-pic" src="{{game.picture}}" alt="Game image">
-        <div class="card-body">
-          <p class="card-title">{{game.name}}</p>
-        </div>
-      </a>
+    <div class="random-card" *ngIf="game">
+      <h1>The Random game of the day:</h1>
+      <div class="card text-center">
+        <a [routerLink]="['/games', game.id]">
+          <img class="card-img-top game-pic" src="{{game.picture}}" alt="Game image">
+          <div class="card-body">
+            <p class="card-title">{{game.name}}</p>
+          </div>
+        </a>
+      </div>
+      <button class="add-btn" (click)="getRandomGame()">Check another game</button>
     </div>
-    <button class="add-btn" (click)="getRandomGame()">Check another game</button>
-  </section>
 
+    <div class="welcome-info">
+      <h1>Welcome to the game library!</h1>
+      <p>Here you will find some of the best boargames, <br> no matter what type of game!</p>
+      <p>If you see that you prefered game is missing, don't worry... <br>YOU CAN ADD IT YOURSELF!</p>
+      <p>But first you will have to log in...</p>
+    </div>
   </div>
 
 </div>

@@ -1,5 +1,5 @@
-<div class="padding">
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="padding form-container">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="edit-form">
   <label>
     Name:
     <input type="text" formControlName="name">
@@ -28,6 +28,6 @@
     Description:
     <textarea formControlName="description"></textarea>
   </label>
-  <button type="submit">Save changes</button>
+  <button class="auth-btn" type="submit">Save changes</button>
 </form>
 </div>

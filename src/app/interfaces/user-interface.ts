@@ -5,7 +5,7 @@ export interface UserInterface {
   username: string;
   email: string;
   selfDescription: string;
-  dateOfBirth: Date;
+  // dateOfBirth: Date;
   profilePicUrl: string;
   address: {
     street: string;

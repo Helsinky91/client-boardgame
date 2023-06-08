@@ -45,7 +45,7 @@ export class ProfileComponent implements OnInit {
     this.userService.deleteUser(id).subscribe(
       {
         next: (data) => {
-          console.log(data);
+          // console.log(data);
           this.router.navigate(['/home'])
         },
         error: (err) => {
