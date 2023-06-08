@@ -20,13 +20,16 @@ h1, h2, h3, h4, h5{
 }
 
 .home-page{
+  margin-top: -22px;
   background-image: url("https://images.pexels.com/photos/776654/pexels-photo-776654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 100vh;
   background-repeat: no-repeat;
   /* background-position: top; */
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   /* filter: grayscale(100%); */
+
+
 }
 .home-section{
   display: flex;
@@ -166,7 +169,8 @@ h1, h2, h3, h4, h5{
 }
 
 .card{
-  background-color: rgba(135, 135, 135, 0.556);
+  /* background-color: rgba(135, 135, 135, 0.556); */
+  background-color: rgba(5, 28, 43, 0.524);
   padding: 10px;
   padding-top: 15px;
   border-radius: 10px;
@@ -175,15 +179,17 @@ h1, h2, h3, h4, h5{
   width: 200px;
   font-family: 'Mina', sans-serif;
   font-size: larger;
+
 }
 
 .card > a{
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  color: white
 }
 
 .card > a:hover {
-  color:rgb(104, 36, 241)
+  color:rgba(255, 119, 0, 0.661)
 }
 
 .game-pic{
@@ -227,10 +233,13 @@ h1, h2, h3, h4, h5{
 }
 
 .profile{
+  /* background-image: url("https://images.pexels.com/photos/82256/pexels-photo-82256.jpeg?auto=compress&cs=tinysrgb&w=1600"); */
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 8px;
 }
 .prof-title{
   margin-bottom: -17px;
@@ -246,6 +255,12 @@ h1, h2, h3, h4, h5{
   gap: 20px;
   flex-wrap: wrap;
   text-align: center;
+  /* background-image: url("https://images.pexels.com/photos/172277/pexels-photo-172277.jpeg?auto=compress&cs=tinysrgb&w=1600"); */
+  /* background-color: rgba(23, 102, 151, 0.624); */
+  background-color: rgba(5, 28, 43, 0.524);
+  border-radius: 20px;
+  color:beige
+
 }
 
 .game-fav-list div {
@@ -269,6 +284,7 @@ h1, h2, h3, h4, h5{
   justify-content: space-around;
   text-align: left;
   flex-wrap: wrap;
+  padding-bottom: 5%;
 
 }
 

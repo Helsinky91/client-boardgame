@@ -3,6 +3,7 @@ import { GamesService } from 'src/app/services/games.service';
 import { GamesInterface } from 'src/app/interfaces/games-interface';
 // import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-games',
@@ -14,8 +15,11 @@ export class GamesComponent implements OnInit {
   gamesList: any;
   selectedGame: any;
   showForm = false;
+  userServiceObj: UserService;
 
-    constructor(private gamesService: GamesService, private router: Router){}
+    constructor(private gamesService: GamesService, private router: Router, private userService: UserService){
+    this.userServiceObj = userService;
+    }
 
     getGames() : void {
       this.gamesService.getGames().subscribe(

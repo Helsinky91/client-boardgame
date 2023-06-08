@@ -1,17 +1,17 @@
 
 <div class="padding">
 <h1>Find here a list of games:</h1>
-<div *ngIf="showForm">
+<div *ngIf= "showForm ">
   <app-new-game (gameCreated)="addGame($event)"></app-new-game>
 </div>
-<button class="btn" (click)="showForm = !showForm">{{ showForm ? 'Hide Section' : 'Add New Game' }}</button>
+<button *ngIf="userServiceObj.userLoggedId" class="btn" (click)="showForm = !showForm">{{ showForm ? 'Hide Section' : 'Add New Game' }}</button>
 
 <section *ngIf="gamesList">
   <div class="row">
     <div class="card-deck">
       <div class="card text-center" *ngFor="let game of gamesList">
         <a [routerLink]="['/games', game.id]">
-          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
+          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Game image">
           <div class="card-body">
             <p class="card-title">{{game.name}}</p>
           </div>

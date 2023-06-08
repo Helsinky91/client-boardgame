@@ -1,5 +1,5 @@
-<h1>Hello {{currentUser.username}}</h1>
-<div class="padding profile" *ngIf="currentUser">
+<h1 *ngIf="currentUser">Hello {{currentUser.username}}</h1>
+<div class="padding profile" >
   <div>
     <div *ngIf="currentUser">
       <img class="game-pic" [src]="currentUser.profilePicUrl" alt="Profile Image">
@@ -14,8 +14,8 @@
       <button class="red-btn" (click)="deleteUser(currentUser.id)">Delete User</button>
     </div>
   </div>
-  <div class="game-fav-list">
-    <div>
+  <div class="game-fav-list" *ngIf="currentUser">
+    <div >
       <h3>My Games</h3>
       <ul *ngFor="let game of currentUser.games">
         <img class="game-picture" [src]="game.picture" alt="Game image">

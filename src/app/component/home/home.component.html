@@ -1,4 +1,4 @@
-<div class="padding home-page">
+<div class="home-page">
   <h1 class="app-title">GAME GEEKERS</h1>
 
   <div class="home-section">
@@ -7,9 +7,9 @@
     <h3>The Random game of the day:</h3>
     <div class="card text-center">
       <a [routerLink]="['/games', game.id]">
-        <img class="card-img-top game-pic" src="{{game.picture}}" alt="Card image cap">
+        <img class="card-img-top game-pic" src="{{game.picture}}" alt="Game image">
         <div class="card-body">
-          <h5 class="card-title">{{game.name}}</h5>
+          <p class="card-title">{{game.name}}</p>
         </div>
       </a>
     </div>

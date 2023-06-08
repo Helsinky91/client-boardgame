@@ -14,6 +14,7 @@ export class EditProfileComponent implements OnInit{
   user!: UserInterface;
   form: FormGroup;
 
+
   @Output() userUpdated = new EventEmitter<UserInterface>();
 
   constructor(
@@ -22,6 +23,7 @@ export class EditProfileComponent implements OnInit{
     private router : Router,
     private userService: UserService
   ) {
+    this.user = userService.userLoggedId;
     this.form = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -33,6 +35,7 @@ export class EditProfileComponent implements OnInit{
         city: ['']
       }),
       password: [''],
+
     });
   }
 
@@ -50,18 +53,21 @@ export class EditProfileComponent implements OnInit{
         address: {
           street: user.address.street,
           city: user.address.city
-        }
+        },
+
+
       });
     });
   }
 
   onSubmit() {
     const updatedUser: UserInterface = this.form.value;
-    updatedUser.id = this.user.id; // set the ID of the updated user
+    updatedUser.id = this.user.id;
 
     this.userService.putUser(this.user.id, updatedUser).subscribe(updatedUserData => {
       this.user = updatedUserData;
-      this.userUpdated.emit(updatedUserData); // emit the updated user data to parent component
+      console.log(updatedUserData)
+      this.userUpdated.emit(updatedUserData);
       this.router.navigate(['/user', this.user.id]);
     });
   }

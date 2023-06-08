@@ -1,4 +1,4 @@
-<div class="padding">
+<div class="padding" *ngIf="user">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <label>
       Username:
@@ -21,14 +21,6 @@
       <input type="text" formControlName="profilePicUrl">
     </label>
     <hr />
-    <!-- <label>
-      Street:
-      <input type="text" formControlName="address.street">
-    </label>
-    <label>
-      City:
-      <input type="text" formControlName="address.city">
-    </label> -->
     <button type="submit">Save changes</button>
   </form>
 </div>
