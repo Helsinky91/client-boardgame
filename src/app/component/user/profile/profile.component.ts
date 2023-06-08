@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
     if (userId) {
       this.userService.getUser(userId).subscribe((user: UserInterface) => {
          this.currentUser = user;
-        // console.log("user " + user.wishlist);
+         console.log("user " + currentUser.wishlist);
       });
     }
   }

@@ -25,7 +25,10 @@ export class SignupComponent {
     const body = this.signupForm.value;
     body.id = 0;
     this.userService.createUser(body).subscribe(
-      (response: any) => console.log(response), // handle the server's response
+      (response: any) => {
+        console.log(response);
+//!REDIRECT A LOGIN
+      }, // handle the server's response
       (error: any) => console.log(error) // handle the error
     );
   }

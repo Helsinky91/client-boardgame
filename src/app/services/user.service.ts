@@ -10,6 +10,8 @@ import { UserInterface } from '../interfaces/user-interface';
 export class UserService {
   private readonly API_URL = "http://localhost:8080/api/user";
 
+  userLoggedId: any = localStorage.getItem('currentUserId');
+
   constructor(private http: HttpClient) { }
 
 
@@ -21,9 +23,15 @@ export class UserService {
     return this.http.post<any>(`${this.API_URL}/add-user`, body)
   }
 
-  // addGameToUser(userId: number, gameId: number): Observable<any>{
-  //   return this.http.post<any>(`${this.API_URL}/add-game/${userId}/${gameId}`)
-  // }
+  addGameToUser(userId: number, gameId: number): Observable<any>{
+    return this.http.post<any>(`${this.API_URL}/add-game/${userId}/${gameId}`, {})
+  }
+  addWishlistToUser(userId: number, gameId: number): Observable<any>{
+    return this.http.post<any>(`${this.API_URL}/add-wishlist/${userId}/${gameId}`, {})
+  }
+  addFavouriteToUser(userId: number, gameId: number): Observable<any>{
+    return this.http.post<any>(`${this.API_URL}/add-favourite/${userId}/${gameId}`, {})
+  }
 
   putUser(id: number, body: any): Observable<any> {
     return this.http.put<any>(`${this.API_URL}/${id}/edit`, body)

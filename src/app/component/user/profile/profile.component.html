@@ -1,12 +1,11 @@
-<div class="padding profile">
-  <h1>Profile</h1>
+<h1>Hello {{currentUser.username}}</h1>
+<div class="padding profile" *ngIf="currentUser">
   <div>
     <div *ngIf="currentUser">
-      <h1>HELLO {{currentUser.username}}</h1>
       <img class="game-pic" [src]="currentUser.profilePicUrl" alt="Profile Image">
       <p>Email: {{currentUser.email}}</p>
       <p>Date of Birth: {{currentUser.dateOfBirth}}</p>
-      <p>Address: {{currentUser.address.city}}, {{currentUser.address.street}}</p>
+      <p *ngIf="currentUser.address">Address: {{currentUser.address.city}}, {{currentUser.address.street}}</p>
       <p>Role: {{currentUser.role}}</p>
       <!-- <p>Age: {{currentUser.getAge() }}</p> -->
     </div>
@@ -16,8 +15,65 @@
     </div>
   </div>
   <div>
-    <h3>WishList</h3>
-    <!-- <p>{{currentUser.WishList}}</p> -->
+    <h3>My Games</h3>
+    <ul *ngFor="let game of currentUser.games">
+      <img class="game-pic-profile" [src]="game.picture" alt="Game image">
+    </ul>
   </div>
-
+  <div>
+    <h3>WishList</h3>
+    <p *ngFor="let wishlist of currentUser.wishlist">{{wishlist.name}}</p>
+  </div>
+  <div>
+    <h3>Favourites</h3>
+    <p *ngFor="let favs of currentUser.favorites">{{favs.name}}</p>
+  </div>
 </div>
+<!-- <div class="profile-games">
+<section>
+  <h3 class="prof-title">My Games</h3>
+  <div class="row row-table" *ngIf="currentUser.games">
+    <div class="card-deck">
+      <div class="card text-center" *ngFor="let game of currentUser.wishlist">
+        <a [routerLink]="['/games', game.id]">
+          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-title">{{game.name}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section >
+  <h3 class="prof-title">My WishList</h3>
+  <div class="row" *ngIf="currentUser.wishlist" >
+    <div class="card-deck">
+      <div class="card text-center" *ngFor="let game of currentUser.favorites">
+        <a [routerLink]="['/games', game.id]">
+          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-title">{{game.name}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h3 class="prof-title">My Favourites</h3>
+  <div class="row"  *ngIf="currentUser.favorites">
+    <div class="card-deck">
+      <div class="card text-center" *ngFor="let game of currentUser.games">
+        <a [routerLink]="['/games', game.id]">
+          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-title">{{game.name}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</div> -->
+

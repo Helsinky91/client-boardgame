@@ -45,7 +45,7 @@ export class GamesComponent implements OnInit {
       this.gamesService.postGame(newGame).subscribe(
         {
           next: (data) => {
-            console.log(data);
+            // console.log(data);
             this.gamesList.push(data);
             this.showForm = false;
           }

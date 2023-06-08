@@ -14,6 +14,7 @@ export interface UserInterface {
   games: GamesInterface[],
   favorites: GamesInterface[],
   wishlist: GamesInterface[]
-  role: string; 
+  role: string;
   getAge(): number;
+  password: string
 }

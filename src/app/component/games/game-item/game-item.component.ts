@@ -12,8 +12,11 @@ import { GamesInterface } from 'src/app/interfaces/games-interface';
 export class GameItemComponent implements OnInit{
 
   game!: GamesInterface;
+  userServiceObj: UserService;
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router, private gamesService: GamesService) { }
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router, private gamesService: GamesService) {
+    this.userServiceObj = userService;
+  }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
@@ -48,12 +51,43 @@ export class GameItemComponent implements OnInit{
         }
       )
     }
-    // addGameToUser(gameId: number) {
-    //   const userId = // get the user ID from somewhere (e.g. from the authentication service)
-    //   this.userService.addGameToUser(userId, gameId).subscribe(
-    //     (response: any) => console.log(response), // handle the server's response
-    //     (error: any) => console.log(error) // handle the error
-    //   );
-    // }
+
+    addGameToUser(gameId: number) {
+      const userId = this.userService.userLoggedId;
+      this.userService.addGameToUser(userId, gameId).subscribe({
+        next: (data) => {
+          console.log("Added");
+        } ,
+      error: (error) => {
+        console.log(error)
+      }
+    });
+    }
+
+
+    addWishlistToUser(gameId: number) {
+      const userId = this.userService.userLoggedId;
+      this.userService.addWishlistToUser(userId, gameId).subscribe({
+        next: (data) => {
+          console.log("Added");
+        } ,
+      error: (error) => {
+        console.log(error)
+      }
+    });
+    }
+
+
+    addFavouriteToUser(gameId: number) {
+      const userId = this.userService.userLoggedId;
+      this.userService.addFavouriteToUser(userId, gameId).subscribe({
+        next: (data) => {
+          console.log("Added");
+        } ,
+      error: (error) => {
+        console.log(error)
+      }
+    });
+    }
 
 }

@@ -1,14 +1,16 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
-  <label>Username: </label>
-  <input type="text" formControlName="username">
+<div class="auth-page">
 
+  <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+    <label>Username: </label>
+  <input type="text" formControlName="username">
+<br>
   <label>Email: </label>
   <input type="email" formControlName="email">
-
+<br>
   <label>Password: </label>
   <input type="password" formControlName="password">
-
-  <!-- add other fields as needed -->
-
-  <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+<br>
+  <button class="auth-btn" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
 </form>
+
+</div>

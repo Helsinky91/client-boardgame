@@ -29,10 +29,15 @@ export class LoginComponent implements OnInit {
       .subscribe(
         user => {
           console.log(user);
+          localStorage.setItem('currentUserId', user.id);
           localStorage.setItem('currentUser', JSON.stringify(user));
+
+          this.userService.userLoggedId = user.id;
+
+
           this.user = user;
           this.router.navigate(['/user', this.user.id])
-          
+
         },
         error => {
           this.invalidLogin = true;

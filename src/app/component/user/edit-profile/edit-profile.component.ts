@@ -31,7 +31,8 @@ export class EditProfileComponent implements OnInit{
       address: this.fb.group({
         street: [''],
         city: ['']
-      })
+      }),
+      password: [''],
     });
   }
 
@@ -45,6 +46,7 @@ export class EditProfileComponent implements OnInit{
         selfDescription: user.selfDescription,
         dateOfBirth: user.dateOfBirth,
         profilePicUrl: user.profilePicUrl,
+        password: user.password,
         address: {
           street: user.address.street,
           city: user.address.city
@@ -64,5 +66,5 @@ export class EditProfileComponent implements OnInit{
     });
   }
 
-  
+
 }
