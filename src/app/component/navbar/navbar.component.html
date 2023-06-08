@@ -18,10 +18,10 @@
     </li>
 
     <li class="navbar-link" *ngIf="!userServiceObj.userLoggedId">
-      <button class="navbar-btn"><a routerLink="/signup" routerLinkActive="active">Sing up</a></button>
+      <a routerLink="/signup" routerLinkActive="active"><button class="navbar-btn">Sing up</button></a>
     </li>
     <li class="navbar-link" *ngIf="!userServiceObj.userLoggedId">
-    <button class="navbar-btn"><a routerLink="/login" routerLinkActive="active">Log in</a></button>
+    <a routerLink="/login" routerLinkActive="active"><button class="navbar-btn">Log in</button></a>
     </li>
     <li class="navbar-link" *ngIf="userServiceObj.userLoggedId">
       <button class="logout-btn" (click)="logout()">Log out</button>
