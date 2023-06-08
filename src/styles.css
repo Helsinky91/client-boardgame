@@ -9,11 +9,25 @@ body {
   padding-bottom: 12%;
 
 }
+.app-title{
+  background-color: blue;
+}
+
 h1, h2, h3, h4, h5{
   font-family: 'Anton', sans-serif;
 }
-.prof-title{
- margin-bottom: -17px;
+
+.home{
+  display: flex;
+  
+}
+
+.random-card{
+  text-align: left;
+  padding-left: 20px;
+}
+.random-card > button{
+  margin-top: 10px;
 }
 
 .padding{
@@ -185,8 +199,76 @@ h1, h2, h3, h4, h5{
 .profile{
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 
 }
+.prof-title{
+  margin-bottom: -17px;
+ }
+
+ .prof-btn{
+   margin-top: 30px;
+ }
+
+.game-fav-list{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.game-fav-list div {
+  min-width: 250px;
+}
+
+.game-fav-list div > ul {
+  padding-left: 0;
+}
+
 .game-pic-profile{
   height: 150px;
+}
+
+.game-picture{
+  height: 130px;
+}
+
+.game-item{
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  flex-wrap: wrap;
+
+}
+
+.game-info{
+  width: 500px;
+  background-color: rgba(214, 210, 204, 0.572);
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 15px;
+}
+
+.game-description{
+  font-size: 19px;
+  text-align: justify;
+
+}
+
+.game-buttons{
+  margin-top: 100px;
+}
+
+.add-btn{
+  background-color: rgba(255, 166, 0, 0.661);
+  font-family: 'Viga', sans-serif;
+  padding: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-top-left-radius: 10px;
+}
+
+.add-btn:hover{
+  background-color: orange
 }

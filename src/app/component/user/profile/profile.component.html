@@ -7,73 +7,31 @@
       <p>Date of Birth: {{currentUser.dateOfBirth}}</p>
       <p *ngIf="currentUser.address">Address: {{currentUser.address.city}}, {{currentUser.address.street}}</p>
       <p>Role: {{currentUser.role}}</p>
-      <!-- <p>Age: {{currentUser.getAge() }}</p> -->
+      <p>Description: {{currentUser.selfDescription}}</p>
     </div>
     <div class="prof-btn">
       <button class="btn" (click)="goToEditProfile()">Edit Profile</button>
       <button class="red-btn" (click)="deleteUser(currentUser.id)">Delete User</button>
     </div>
   </div>
-  <div>
-    <h3>My Games</h3>
-    <ul *ngFor="let game of currentUser.games">
-      <img class="game-pic" [src]="game.picture" alt="Game image">
-    </ul>
-  </div>
-  <div>
-    <h3>WishList</h3>
-    <p *ngFor="let wishlist of currentUser.wishlist">{{wishlist.name}}</p>
-  </div>
-  <div>
-    <h3>Favourites</h3>
-    <p *ngFor="let favs of currentUser.favorites">{{favs.name}}</p>
+  <div class="game-fav-list">
+    <div>
+      <h3>My Games</h3>
+      <ul *ngFor="let game of currentUser.games">
+        <img class="game-picture" [src]="game.picture" alt="Game image">
+      </ul>
+    </div>
+    <div>
+      <h3>WishList</h3>
+        <ul *ngFor="let wishlist of currentUser.wishlist">
+        <img class="game-picture" [src]="wishlist.picture" alt="Game image">
+        </ul>
+    </div>
+    <div>
+      <h3>Favourites</h3>
+        <ul *ngFor="let favs of currentUser.favorites">
+          <img class="game-picture" [src]="favs.picture" alt="Game image">
+        </ul>
+    </div>
   </div>
 </div>
-<!-- <div class="profile-games">
-<section>
-  <h3 class="prof-title">My Games</h3>
-  <div class="row row-table" *ngIf="currentUser.games">
-    <div class="card-deck">
-      <div class="card text-center" *ngFor="let game of currentUser.wishlist">
-        <a [routerLink]="['/games', game.id]">
-          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-title">{{game.name}}</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<section >
-  <h3 class="prof-title">My WishList</h3>
-  <div class="row" *ngIf="currentUser.wishlist" >
-    <div class="card-deck">
-      <div class="card text-center" *ngFor="let game of currentUser.favorites">
-        <a [routerLink]="['/games', game.id]">
-          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-title">{{game.name}}</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <h3 class="prof-title">My Favourites</h3>
-  <div class="row"  *ngIf="currentUser.favorites">
-    <div class="card-deck">
-      <div class="card text-center" *ngFor="let game of currentUser.games">
-        <a [routerLink]="['/games', game.id]">
-          <img class="card-img-top, game-pic" src="{{game.picture}}" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-title">{{game.name}}</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-</div> -->
-

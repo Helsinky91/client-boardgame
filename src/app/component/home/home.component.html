@@ -1,12 +1,10 @@
-<div class="padding padding-left">
+<div class="padding">
+  <h1 class="app-title">GAME GEEKERS</h1>
 
+  <div class="home">
 
-
-  <button (click)="getRandomGame()">Check another game</button>
-
-
-  <section class="padding" *ngIf="game">
-    <h1>The Random game of the day:</h1>
+  <section class="random-card" *ngIf="game">
+    <h3>The Random game of the day:</h3>
     <div class="card text-center">
       <a [routerLink]="['/games', game.id]">
         <img class="card-img-top game-pic" src="{{game.picture}}" alt="Card image cap">
@@ -14,8 +12,10 @@
           <h5 class="card-title">{{game.name}}</h5>
         </div>
       </a>
-  </div>
-</section>
+    </div>
+    <button class="add-btn" (click)="getRandomGame()">Check another game</button>
+  </section>
 
+  </div>
 
 </div>
