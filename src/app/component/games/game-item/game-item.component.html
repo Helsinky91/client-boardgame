@@ -7,16 +7,16 @@
     <p>{{ game.minPlayers }} - {{ game.maxPlayers }} players</p>
     <p class="game-description">{{ game.description }}</p>
   </div>
-  <div class="game-buttons">
+  <div class="game-buttons" *ngIf="userServiceObj.userLoggedId">
     <div>
-      <button class="btn" (click)="goToEditGame()" *ngIf="userServiceObj.userLoggedId">Edit Game</button>
-      <button class="red-btn" (click)="deleteGame(game.id)" *ngIf="userServiceObj.userLoggedId">Delete Game</button>
+      <button class="btn" (click)="goToEditGame()" >Edit Game</button>
+      <button class="red-btn" (click)="deleteGame(game.id)" >Delete Game</button>
     </div>
     <div>
       <h3>Add to collection: </h3>
-      <button class="add-btn" (click)="addGameToUser(game.id)" *ngIf="userServiceObj.userLoggedId">Add to My Games</button>
-      <button class="add-btn" (click)="addWishlistToUser(game.id)" *ngIf="userServiceObj.userLoggedId">Add to Wishlist</button>
-      <button class="add-btn" (click)="addFavouriteToUser(game.id)" *ngIf="userServiceObj.userLoggedId">Add to Favourites</button>
+      <button class="add-btn" (click)="addGameToUser(game.id)" >Add to My Games</button>
+      <button class="add-btn" (click)="addWishlistToUser(game.id)" >Add to Wishlist</button>
+      <button class="add-btn" (click)="addFavouriteToUser(game.id)" >Add to Favourites</button>
     </div>
   </div>
 </div>

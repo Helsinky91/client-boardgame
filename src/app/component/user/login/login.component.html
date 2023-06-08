@@ -4,9 +4,9 @@
     <input type="text" formControlName="username" placeholder="Username">
     <br>
     <input type="password" formControlName="password" placeholder="Password">
-    <p *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].dirty">Username is required and must be at least 5 characters long</p>
-    <p *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].dirty">Password is required and must be at least 8 characters long</p>
-    <p *ngIf="invalidLogin">Invalid username or password</p>
+    <p class="error-message" *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].dirty"><b>Username</b> is required and must be at least 5 characters long</p>
+    <p class="error-message" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].dirty"><b>Password</b> is required and must be at least 8 characters long</p>
+    <p class="error-message" *ngIf="invalidLogin">Invalid username or password</p>
     <br>
     <button class="auth-btn" type="submit" [disabled]="loginForm.invalid" (click)="login()">Login</button>
   </form>

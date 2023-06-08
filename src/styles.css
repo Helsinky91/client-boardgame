@@ -1,25 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Mina&family=Montserrat&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&family=VT323&family=Viga&display=swap');
+
 body {
   height: 100vh;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 0;
   margin: 0;
-  background-color: rgba(0, 255, 191, 0.129);
+  /* background-color: rgba(0, 255, 191, 0.129); */
+  background-color: rgba(4, 61, 40, 0.472);
   text-align: center;
-  padding-bottom: 12%;
+  /* padding-bottom: 12%; */
 
 }
 .app-title{
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 h1, h2, h3, h4, h5{
   font-family: 'Anton', sans-serif;
 }
 
-.home{
+.home-page{
+  background-image: url("https://images.pexels.com/photos/776654/pexels-photo-776654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  /* background-position: top; */
+  background-size: cover;
+  background-position: center center;
+  /* filter: grayscale(100%); */
+}
+.home-section{
   display: flex;
-  
+
+}
+.error-message {
+  color: rgb(147, 7, 7)
 }
 
 .random-card{
@@ -32,6 +46,7 @@ h1, h2, h3, h4, h5{
 
 .padding{
   padding-bottom: 12%;
+  margin-top: -22px;
 }
 .padding-left{
   padding-left: 5%;
@@ -78,24 +93,27 @@ h1, h2, h3, h4, h5{
 .auth-page{
   padding-top: 50px;
   /* background-color: rgba(16, 53, 40, 0.374); */
-  /* background-image: url(""); */
-  min-height: 100vh;
+  background-image: url("https://images.pexels.com/photos/4691555/pexels-photo-4691555.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    min-height: 100vh;
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: top; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:first baseline;
-
+  justify-content: first baseline;
+  background-size: cover;
+  background-position: center center;
+  margin-top: -22px;
+  padding-bottom: 0;
 }
-
 
 .auth-btn{
   margin-top: 5px;
   /* background-color: rgb(103, 50, 217); */
   background-color: rgba(255, 166, 0, 0.661);
-
   padding: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-left: 2px;
   margin-right: 2px;
   border-top-left-radius: 10px;
@@ -104,9 +122,21 @@ h1, h2, h3, h4, h5{
 }
 
 .auth-btn:hover{
-  background-color: rgb(0, 174, 248);
-  padding: 7px;
+  background-color: rgba(255, 119, 0, 0.661);
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
 
+}
+
+.auth-btn:disabled{
+  background-color: grey;
+}
+.auth-btn:disabled:hover{
+  background-color: grey;
+  padding: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 

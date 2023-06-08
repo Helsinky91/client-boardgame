@@ -10,6 +10,11 @@
   <label>Password: </label>
   <input type="password" formControlName="password">
 <br>
+    <p class="error-message" *ngIf="signupForm.controls['username'].invalid && signupForm.controls['username'].dirty"><b>Username</b> is required and must be bettween 5 and 12 characters long</p>
+    <p class="error-message" *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].dirty"><b>Password</b> is required and must be at least 4 characters long and contain at least 1 uppercase letter</p>
+    <p class="error-message" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].dirty"><b>Email</b> is required and must be valid @email.com</p>
+
+    <p class="error-message" *ngIf="invalidSignup">Invalid data provided</p>
   <button class="auth-btn" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
 </form>
 
